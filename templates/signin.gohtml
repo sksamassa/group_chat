@@ -1,0 +1,29 @@
+{{template "header" .}}
+<div class="flex flex-col justify-center items-center">
+    <div class="p-4 bg-white">
+        <h1 class="text-2x font-bold text-center mb-4">Welcome back!</h1>
+     <form action="/signin" method="post">
+     <div class="hidden">{{csrfField}}</div>
+     
+        <div class="py-2">
+            <label for="email">E-mail</label>
+            <input class="w-full py-2 px-4 border-2" type="email" name="email" id="email" placeholder="E-mail" required
+            {{if not .Email}}autofocus{{end}} />
+        </div>
+        <div class="py-2">
+            <label for="password">Password</label>
+            <input class="w-full py-2 px-4 border-2" type="password" name="password" id="password" placeholder="Password" required 
+            {{if .Email}}autofocus{{end}}/>
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="w-full py-2 bg-green-500 text-white font-bold rounded-full">Login</button>
+        </div>
+    </form>
+
+    <div class="flex justify-between text-xs underline text-blue-700 py-4">
+        <a href="/signup" class="hover:text-blue-950">Need an account?</a>
+        <a href="/forgot-pw" class="hover:text-blue-950">Forgot Your Password?</a>
+    </div>
+    </div>
+   </div>
+{{template "footer" .}}
