@@ -3,6 +3,10 @@ go 1.22.0
 use (
 	.
 	./controllers
+	./migrations
 	./models
+	./templates
 	./views
+	./contexts
+	./rand
 )
